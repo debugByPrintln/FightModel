@@ -2,7 +2,7 @@ package com.melnikov.fight_model;
 
 import com.melnikov.fight_model.Utills.Utils;
 
-public class Enemy implements Mortal{
+public abstract class Enemy implements Mortal{
     private String name;
     private int health;
 
@@ -15,11 +15,7 @@ public class Enemy implements Mortal{
         setHealth(health - damage);
     }
 
-    public void attackHero(Hero hero){
-        int damage = Utils.getRandomNumber(3, 8);
-        hero.takeDamage(damage);
-        System.out.println("Enemy attacks hero! (" + damage + ")");
-    }
+    public abstract void attackHero(Hero hero);
 
     public int getHealth() {
         return health;
@@ -29,13 +25,8 @@ public class Enemy implements Mortal{
         this.health = health;
     }
 
-    @Override
-    public boolean isAlive() {
-        boolean res = true;
-        int currentHealth = getHealth();
-        if (currentHealth <= 0){
-            res = false;
-        }
-        return res;
+    public String getName() {
+        return name;
     }
+
 }

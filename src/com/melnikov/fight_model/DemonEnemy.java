@@ -2,20 +2,19 @@ package com.melnikov.fight_model;
 
 import com.melnikov.fight_model.Utills.Utils;
 
-public class Warrior extends Hero{
-
-    public Warrior(String name, int health) {
+public class DemonEnemy extends Enemy{
+    public DemonEnemy(String name, int health) {
         super(name, health);
     }
 
     @Override
-    public void attackEnemy(Enemy enemy){
+    public void attackHero(Hero hero) {
         int damage = Utils.getRandomNumber(9, 19);
         int chance = Utils.getRandomNumber(0, 100);
 
-        if (chance > 15){
-            enemy.takeDamage(damage);
-            System.out.println(super.getName() + "attacked " + enemy.getName() + " with a demon sword! (" + damage + ")");
+        if (chance > 80){
+            hero.takeDamage(damage);
+            System.out.println(super.getName() + " attacked " + hero.getName() + " with a demon sword! (" + damage + ")");
         }
         else {
             System.out.println(super.getName() + " missed");

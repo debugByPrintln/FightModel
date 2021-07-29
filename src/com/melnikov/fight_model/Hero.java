@@ -1,7 +1,5 @@
 package com.melnikov.fight_model;
 
-import java.util.Random;
-
 public abstract class Hero implements Mortal {
     private String name;
     private int health;

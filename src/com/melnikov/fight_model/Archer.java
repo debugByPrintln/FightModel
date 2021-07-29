@@ -3,7 +3,6 @@ package com.melnikov.fight_model;
 import com.melnikov.fight_model.Utills.Utils;
 
 public class Archer extends Hero{
-    public static int ARCHER_DAMAGE = 10;
 
     public Archer(String name, int health) {
         super(name, health);
