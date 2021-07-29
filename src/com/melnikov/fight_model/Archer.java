@@ -10,9 +10,16 @@ public class Archer extends Hero{
 
     @Override
     public void attackEnemy(Enemy enemy){
-        int damage = Utils.getRandomNumber(7, 15);
-        enemy.takeDamage(damage);
-        System.out.println(super.getName() + " just shot an enemy with an arrow!(" + damage + ")");
+        int damage = Utils.getRandomNumber(9, 19);
+        int chance = Utils.getRandomNumber(0, 100);
+
+        if (chance > 15){
+            enemy.takeDamage(damage);
+            System.out.println(super.getName() + "attacked " + enemy.getName() + " with a demon sword! (" + damage + ")");
+        }
+        else {
+            System.out.println(super.getName() + " missed");
+        }
     }
 
     @Override
